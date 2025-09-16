@@ -1,0 +1,74 @@
+<!-- add header -->
+<%- include('includes/_header') %>
+<!-- end header -->
+
+<!-- Main section -->
+<main id="main">
+  <a href="/">
+    <span><i class="fas fa-arrow-left"></i> All Drugs</span>
+  </a>
+
+  <h2>Add a Drug</h2>
+  <p>Use the below form to add a new drug</p>
+
+  <!-- Add drug form -->
+  <form action="/api/drugs" method="POST" id="add_drug" novalidate>
+    <div class="container d-flex flex-column align-items-stretch">
+      
+      <!-- Drug Name -->
+      <div class="row mb-3 form-group justify-content-center">             
+        <label for="name" class="col-3 col-form-label">Drug Name</label>
+        <input type="text" id="name" name="name" value=""
+               placeholder="Drug Name"
+               minlength="6" required
+               class="col-md-4 col-xs-8">
+      </div>
+
+      <!-- Tablets per Card -->
+      <div class="row mb-3 form-group justify-content-center">
+        <label for="card" class="col-3 col-form-label">Tablets per Card</label>
+        <input type="number" id="card" name="card" value=""
+               placeholder="Tablets per Card"
+               min="1001" required
+               class="col-xs-8 col-md-4">
+      </div>
+
+      <!-- Tablets per Pack -->
+      <div class="row mb-3 form-group justify-content-center">
+        <label for="pack" class="col-3 col-form-label">Tablets per Pack</label>
+        <input type="number" id="pack" name="pack" value=""
+               placeholder="Tablets per Pack"
+               min="1" required
+               class="col-xs-8 col-md-4">
+      </div>
+
+      <!-- Taken per day -->
+      <div class="row form-group mb-3 justify-content-center">
+        <label for="perDay" class="col-3 col-form-label">Taken per day</label>
+        <input type="number" id="perDay" name="perDay" value=""
+               placeholder="Taken per day"
+               min="1" required
+               class="col-xs-8 col-md-4">
+      </div>
+
+      <!-- Dosage -->
+      <div class="row mb-3 form-group justify-content-center">             
+        <label for="dosage" class="col-3 col-form-label">Dosage</label>
+        <input type="text" id="dosage" name="dosage" value=""
+               placeholder="e.g. 10-morning,20-afternoon,30-night"
+               pattern="^\d+-morning,\d+-afternoon,\d+-night$"
+               required
+               class="col-md-4 col-xs-8">
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Add Drug</button>
+      </div>
+    </div>
+  </form>
+</main>
+<!-- End main section -->
+
+<!-- add footer -->
+<%- include('includes/_footer') %>
+<!-- end footer -->
